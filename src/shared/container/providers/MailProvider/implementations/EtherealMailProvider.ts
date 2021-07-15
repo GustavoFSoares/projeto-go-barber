@@ -3,12 +3,12 @@ import nodemailer, { Transporter } from 'nodemailer';
 
 import { inject, injectable } from 'tsyringe';
 
-import IStorageProvider from '../models/IMailProvider';
+import IMailProvider from '../models/IMailProvider';
 import ISendMailDTO from '../dtos/ISendMailDTO';
 import IMailTemplateProvider from '../../MailTemplateProvider/models/IMailTemplateProvider';
 
 @injectable()
-export default class EtherealMailProvider implements IStorageProvider {
+export default class EtherealMailProvider implements IMailProvider {
 	private client: Transporter;
 
 	constructor(
